@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Knockout Starter Guide</title>
+        <!-- CSS Here-->
+    </head>
+    <body>
+        <div id="content">
+            <h3>Inventory Manager</h3>
+            <div id="productListView"
+                 style="float: left;">
+                <select id="productList" size="10"
+                        style="min-width:  120px;"
+                        data-bind="options: productCollection,
+                                   value: listViewSelectedItem,
+                                   optionsText: 'skuAndDescription'">
+                </select>
+            </div>
+            <div id="productView" 
+                style="float: none;"
+                data-bind="with: selectedProduct">
+                <form>
+                    <fieldset>
+                        <legend>Product Details</legend>
+                        <label>SKU: 
+                            <input type="text" data-bind="value: sku"/>
+                        </label>
+                        <br/>     
+                        <label>Description: 
+                            <input type="text" data-bind="value: description"/>
+                        </label>
+                        <br/>
+                        <label>Cost: 
+                            <input type="text" data-bind="value: cost"/>
+                        </label>
+                        <br/>
+                        <label>Price: 
+                            <input type="text" data-bind="value: price"/>
+                        </label>
+                        <br/>
+                        <label>Quantity: 
+                            <input type="text" data-bind="value: quantity"/>
+                        </label>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="buttonContainer">
+                <button type="button" data-bind="click: addNewProduct, visible: (selectedProduct() ? false : true)">Add</button>
+                <button type="button" data-bind="click: removeProduct, visible: (selectedProduct() ? true : false)">Remove</button>
+                <button type="button" data-bind="click: doneEditingProduct, visible: (selectedProduct() ? true : false)">Done</button>
+            </div>
+        </div>
+        <!-- JavaScript Files Here-->
+        <script type="text/javascript" src="/JS/knockout-2.1.0.debug.js"></script>
+        <script type="text/javascript" src="/JS/App.js"></script>
+        
+        <script type="text/javascript" src="/js/product.js"></script>
+        <script type="text/javascript" src="/js/productsviewmodel.js"></script>
+        
+        <script type="text/javascript">
+            var app = new myApp.App();
+
+            app.run();
+        </script>
+        
+    </body>
+</html>

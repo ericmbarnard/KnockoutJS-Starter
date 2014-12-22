@@ -1,0 +1,9 @@
+<span data-bind="text: myText"></span>
+
+<div data-bind="visible: isVisible, with: someProp"></div>
+
+<input data-bind="value: someVal, 
+                  css: { 
+                    'error': !someVal.isValid(), 
+                    'success': someVal.isValid() 
+                  }"/>

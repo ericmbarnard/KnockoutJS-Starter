@@ -1,0 +1,24 @@
+<div id="content">
+	<div id="productView" data-bind="with: selectedProduct">
+		<p>
+			SKU: <span data-bind="text: sku"></span>
+		</p>     
+		<p>
+			Description: <span data-bind="text: description"></span>
+		</p>
+		<p>
+			Cost: <span data-bind="text: cost"></span>
+		</p>
+		<p>
+			Price: <span data-bind="text: price"></span>
+		</p>
+		<p>
+			Quantity: <span data-bind="text: quantity"></span>
+		</p>
+	</div>
+	<div id="buttonContainer">
+		<button type="button" data-bind="click: addNewProduct">Add</button>
+		<button type="button" data-bind="click: removeProduct">Remove</button>
+		<button type="button" data-bind="click: doneEditingProduct">Done</button>
+	</div>
+</div>

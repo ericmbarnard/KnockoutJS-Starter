@@ -1,0 +1,11 @@
+<div id="buttonContainer">
+	<button type="button" 
+		data-bind="click: addNewProduct, 
+			   visible: (selectedProduct() ? false : true)">Add</button>
+	<button type="button" 
+		data-bind="click: removeProduct, 
+			   visible: (selectedProduct() ? true : false)">Remove</button>
+	<button type="button" 
+		data-bind="click: doneEditingProduct,
+			   visible: (selectedProduct() ? true : false)">Done</button>
+</div>
